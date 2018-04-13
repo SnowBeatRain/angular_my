@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Http, Response, URLSearchParams, BaseRequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/Rx';
@@ -14,20 +14,21 @@ export class HttpService {
     res._body = jsonResponse
     return res
   }
-  private handleError() {
-    
+  private handleError<T>(operation = 'operation', result?: T) {
+    return console.error(result); // log to console instead
   }
   getInfo(params?: any) {
-    console.log(this.heroesUrl)
-    console.log(params)    
-    return this.http.get("http://api.nihaotop.com/api/Home/PCInfo?pageIndex=1&pageSize=100&status=-1")
+    // return this.http.get(this.heroesUrl + "/api/Home/PCInfo?pageIndex=1&pageSize=100&status=-1")
+    return this.http.get(this.heroesUrl + `/api/Home/PCInfo?pageIndex=${params.pageIndex}&pageSize=${params.pageSize}&status=${params.status}`)
     // return this.http.get(this.heroesUrl + "/api/Home/PCInfo", params)
       // .map(res => this.convertResponse(res))
-      .map(res =>{
-        console.log(res)
-      })
-      // .pipe(
-      //   tap(res => this.convertResponse(res))
-      // );
+      // .map(res => {
+      //   console.log(res)
+      // })
+      .pipe(
+        tap(res => {
+          console.log(res)
+        })
+      );
   }
 }
