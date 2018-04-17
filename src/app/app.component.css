@@ -1,0 +1,42 @@
+.navBox {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.navlist {
+  display: inline-block;
+  width: 49%;
+  text-align: center;
+}
+
+.navlist .navImg {
+  height: 2rem;
+}
+.navBox .active{
+  color: #3470cd;
+}
+.navlist_home .navlist_homeImg {
+  background-image: url(../assets/images/parcel_page.png);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+.navBox .active .navlist_homeImg{
+  background-image: url(../assets/images/parcel_selected.png);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+.navlist_mine .navlist_mineImg {
+  background-image: url(../assets/images/my.png);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+.navBox .active .navlist_mineImg{
+  background-image: url(../assets/images/my_selected.png);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
