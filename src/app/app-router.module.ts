@@ -7,6 +7,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MineComponent } from "./mine/mine.component";
 import { HomelistComponent } from './homelist/homelist.component'
+import { PasscodeComponent } from "./passcode/passcode.component"
+import { OrderComponent } from "./order/order.component"
 
 //通过RouterModule.forRoot制定具体的路由规则。
 const routes: Routes = [
@@ -16,19 +18,27 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: "homelist",
+    path: "homelist/:num",
     component: HomelistComponent
   },
   {
     path: "mine",
     component: MineComponent
   },
+  {
+    path: "order",
+    component: OrderComponent
+  },
+  {
+    path: "passcode",
+    component: PasscodeComponent
+  },
   //路由重定向
-  // {
-  //   path: "",
-  //   redirectTo: "home",
-  //   pathMatch: "full"
-  // }
+  {
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full"
+  }
 ]
 
 @NgModule({

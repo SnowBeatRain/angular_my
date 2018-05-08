@@ -1,0 +1,144 @@
+.nav {
+  height: 4rem;
+  color: #fff;
+  font-size: 0.9rem;
+  text-indent: 2em;
+  padding: 1rem;
+  background-color: #3470cb;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.boxKong {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+h3 {
+  color: #808080;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.received {
+  margin-top: 1rem;
+}
+
+.dueInList {
+  width: 100%;
+  border-radius: 0.2rem;
+  border-top: 1px solid #efefef;
+  border-left: 1px solid #efefef;
+  box-shadow: 0.3rem 0.3rem 0.3rem #ddd;
+  margin-top: 1rem;
+}
+
+.infoMsgHome {
+  overflow: hidden;
+  padding: 0.5rem 0.5rem 0rem 0rem;
+}
+
+.infoMsgHome .listImg {
+  float: left;
+  width: 6.5rem;
+  height: 4.7rem;
+  margin: 0 1rem 0 0.5rem;
+}
+
+.listImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.infoMsgHome .listInfo h4 {
+  color: #333;
+  font-size: 1rem;
+}
+
+.infoMsgHome .listInfo h4 span {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  float: right;
+  letter-spacing: 0.3rem;
+}
+
+.infoMsgHome .listInfo p {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.infoMsgHome .listInfo p:nth-child(1) {
+  margin-top: 1rem;
+}
+
+.infoMsgHome .listInfo p span {
+  color: #b3b3b3;
+  font-size: 0.8rem;
+}
+
+.dueInBtn .btnImg {
+  height: 0.3rem;
+  width: 100%;
+}
+
+.btnBox,
+.btnInfo {
+  /* display: flex;
+  justify-content: space-around; */
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 0.8rem 0;
+  color: #3470cb;
+  font-family: "方正兰亭黑";
+  overflow: hidden;
+}
+
+.btnBox p {
+  display: inline-block;
+  width: 49%;
+}
+
+.btnBox .borderLine {
+  float: left;
+  border-right: 1px dashed #0066cc;
+}
+
+.received .btnBox {
+  color: #333;
+}
+
+.backTop {
+  position: fixed;
+  right: 2rem;
+  bottom: 5rem;
+  text-align: center;
+  display: none;
+}
+
+.backTopImg {
+  width: 2.5rem;
+  height: 2.5rem;
+  animation: arrowScroll 1.5s infinite;
+}
+
+@keyframes arrowScroll {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-0.5rem);
+    opacity: 0;
+  }
+}

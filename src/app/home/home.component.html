@@ -1,8 +1,84 @@
-<p>
-  home works!
-</p>
-<button (click)="onclick()">点击跳转</button>
+<div style="padding:1rem;">
 
-<input type="text" [(ngModel)]="text">
-<a href="www.baidu.com">{{text}}</a>
-<a routerLink="/homelist">Heroes</a>
+  <div class="allBox">
+    <!-- 待收 -->
+    <div class="dueIn">
+      <h3>待收包裹</h3>
+      <ng-container *ngFor="let l of packList">
+        <div class="dueInList" *ngIf="l.Type == 0">
+          <div class="infoMsgHome">
+            <div class="listImg">
+              <img src="../../assets/images/logoCompany/圆通快递.png" alt="">
+            </div>
+            <!-- <CompanyImg :name="l.Company"></CompanyImg> -->
+            <div class="listInfo">
+              <p>单&nbsp;&nbsp;&nbsp;号：
+                <span style="letter-spacing: 0.05rem;">{{l.Number}}</span>
+              </p>
+              <p>取货码：
+                <span>{{l.Shelf}}</span>
+              </p>
+            </div>
+          </div>
+          <div class="dueInBtn">
+            <img class="btnImg" src="../../assets/images/border.png" alt="">
+            <div class="btnBox">
+              <!-- <router-link :to="'/home/goodsmap/id='+l.PackageID+'/num='+l.Shelf"> -->
+              <p class="borderLine">取货地图</p>
+              <!-- </router-link> -->
+              <!-- <router-link :to="'/home/orderpay/id='+l.PackageID"> -->
+              <!-- <router-link to="//working"> -->
+              <p>申请代送</p>
+              <!-- </router-link> -->
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <!-- 已收 -->
+    <div class="received">
+      <h3>已收包裹</h3>
+      <ng-container *ngFor="let l of  packList,let i= index">
+        <div class="dueInList" *ngIf="l.Type == 1">
+          <div class="infoMsgHome">
+            <div class="listImg">
+              <img src="../../assets/images/logoCompany/圆通快递.png" alt="">
+              <!-- <CompanyImg :name="l.Company"></CompanyImg> -->
+            </div>
+            <div class="listInfo">
+              <p>单&nbsp;&nbsp;&nbsp;号：
+                <span style="letter-spacing: 0.05rem;">{{l.Number}}</span>
+              </p>
+              <p>取货码：
+                <span>{{l.Shelf}}</span>
+              </p>
+            </div>
+          </div>
+          <div class="dueInBtn">
+            <img class="btnImg" src="../../assets/images/border.png" alt="">
+            <!-- [routerLink]="['/homelist',l.Shelf]" -->
+            <div class="btnInfo" (click)="clickYourSelf(l)">
+              <span>配送信息</span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+
+</div>
+<!-- 回到顶部 -->
+<div class='backTop'>
+  <img class='backTopImg' (click)="scrollBackTop()" src="../../assets/images/backtop.png" alt="">
+</div>
+<!--上滑加载更多  -->
+<div>
+  <div class="addMore" *ngIf="isShowMore" style="text-align:center;margin-top:1rem;">
+    <i class="fa fa-spinner fa-pulse"></i>
+    <p class="MoreText" style="margin-bottom:1rem;">加载更多</p>
+  </div>
+  <div class="addMore" *ngIf="!isShowMore" style="text-align:center;margin-top:1rem;">
+    <p class="MoreText" style="margin-bottom:1rem;">你还没更多包裹哦</p>
+  </div>
+</div>

@@ -18,6 +18,8 @@ import {HttpService} from './http.service'
 
 // 路由导入
 import { AppRouterModule } from './app-router.module';
+import { OrderComponent } from './order/order.component';
+import { PasscodeComponent } from './passcode/passcode.component';
 
 declare var baseUrl: any;
 
@@ -26,8 +28,10 @@ declare var baseUrl: any;
     AppComponent,
     HomeComponent,
     MineComponent,
-    HomelistComponent
-  ],
+    HomelistComponent,
+    OrderComponent,
+    PasscodeComponent
+],
   // 指定
   imports: [
     BrowserModule,

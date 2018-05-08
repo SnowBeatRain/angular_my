@@ -1,42 +1,86 @@
-.navBox {
+.footer-nav {
+  font-size: 1rem;
   position: fixed;
   bottom: 0;
   width: 100%;
+  border-top: 1px solid #f1f1f1;
+  background-color: #fff;
+  z-index: 100;
 }
 
-.navlist {
+.footer-nav .span {
+  width: 24%;
   display: inline-block;
-  width: 49%;
   text-align: center;
 }
+.footer-nav .span:focus{
+  border: none;
+}
+.nav-a .titleName {
+  color: gray;
+}
 
-.navlist .navImg {
+.bottom {
+  position: relative;
+  top: -0.2rem;
+}
+
+.bottom span {
+  font-size: 0.65rem;
+}
+
+.active .titleName {
+  color: #3470cb;
+}
+
+.home_nav {
   height: 2rem;
-}
-.navBox .active{
-  color: #3470cd;
-}
-.navlist_home .navlist_homeImg {
   background-image: url(../assets/images/parcel_page.png);
   background-size: 2rem 2rem;
   background-repeat: no-repeat;
   background-position: 50%, 50%;
 }
-.navBox .active .navlist_homeImg{
+
+.active .home_nav {
   background-image: url(../assets/images/parcel_selected.png);
+}
+
+.order_nav {
+  height: 2rem;
+  background-image: url(../assets/images/order.png);
   background-size: 2rem 2rem;
   background-repeat: no-repeat;
   background-position: 50%, 50%;
 }
-.navlist_mine .navlist_mineImg {
+
+.active .order_nav {
+  background-image: url(../assets/images/order_selected.png);
+}
+
+.passcode_nav {
+  height: 2rem;
+  background-image: url(../assets/images/code.png);
+  background-size: 2rem 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%, 50%;
+}
+
+.active .passcode_nav {
+  background-image: url(../assets/images/code_selected.png);
+}
+
+.mine_nav {
+  height: 2rem;
   background-image: url(../assets/images/my.png);
   background-size: 2rem 2rem;
   background-repeat: no-repeat;
   background-position: 50%, 50%;
 }
-.navBox .active .navlist_mineImg{
+
+.active .mine_nav {
   background-image: url(../assets/images/my_selected.png);
-  background-size: 2rem 2rem;
-  background-repeat: no-repeat;
-  background-position: 50%, 50%;
+}
+
+.active {
+  color: #3470cb
 }
