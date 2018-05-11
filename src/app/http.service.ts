@@ -6,8 +6,9 @@ import 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';
 
 // 设置请求头
+const tokenString = 'B9532714F31CFC8A14277DC4B4129C577D926B4A6C6D8566A58B5544FF70CCC77F2079FED1E392B4083AAAEC8E4F2E6277A867B56381F5698DAB3C35D9D9C625';
 const httpOptions = {
-  headers: new HttpHeaders({ 'Authorization': 'B087EEE5922749FAA45EDD2FFDF7DFD738DE82BF9582E9A015112890267AB1A7A9F740517BD3E30CC2F67A19CDD97F039B08AED42B5D8011722951F73DDD8BE9' })
+  headers: new HttpHeaders({ 'Authorization': tokenString })
 };
 @Injectable()
 export class HttpService {
@@ -17,9 +18,9 @@ export class HttpService {
   ) { }
   private heroesUrl = 'http://yc.nbxuanma.com';  // URL to web api
   private convertResponse(res: any): any {
-    const jsonResponse = res.json()
-    res._body = jsonResponse
-    return res
+    const jsonResponse = res.json();
+    res._body = jsonResponse;
+    return res;
   }
 
   // private handleError<T>(operation = 'operation', result?: T) {
@@ -31,7 +32,7 @@ export class HttpService {
   }
   getInfo(params?: any) {
     // return this.http.get(this.heroesUrl + "/api/Home/PCInfo?pageIndex=1&pageSize=100&status=-1")
-    return this.http.get(this.heroesUrl + `/api/User/MyPackage?pageIndex=${params.pageIndex}&pageSize=${params.pageSize}`,httpOptions)
+    return this.http.get(this.heroesUrl + `/api/User/MyPackage?pageIndex=${params.pageIndex}&pageSize=${params.pageSize}`, httpOptions)
       // .map(res => this.convertResponse(res))
       // .map(res => {
       //   console.log(res)
@@ -44,7 +45,7 @@ export class HttpService {
       .pipe(
         tap(res => { }),
         catchError(this.handleError)
-      )
+      );
 
   }
 }

@@ -9,16 +9,21 @@ export class HomelistComponent implements OnInit {
 
   constructor() { }
   yourSelfInfo: {
-    Number: "",
-    DeliveryUser: "",
-    DeliveryPhone: ""
-  }
+    Number: '',
+    DeliveryUser: '',
+    DeliveryPhone: ''
+  };
   lookMap() {
-    console.log("点击了放大")
+    console.log('点击了放大');
   }
   ngOnInit() {
-    var info = JSON.parse(localStorage.getItem("yourselfInfo"));
-    this.yourSelfInfo = info
+    const info = JSON.parse(localStorage.getItem('yourselfInfo'));
+    this.yourSelfInfo = info;
+
+    // var canvas = document.querySelector("#canvas");
+    // var cxt = canvas.getContext("2d");
+    // var canvas: any = document.querySelector("#canvas");
+    // var cxt: CanvasRenderingContext2D = canvas.nativeElement.getContext("2d");
   }
 
 }

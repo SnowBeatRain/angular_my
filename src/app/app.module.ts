@@ -20,6 +20,7 @@ import {HttpService} from './http.service'
 import { AppRouterModule } from './app-router.module';
 import { OrderComponent } from './order/order.component';
 import { PasscodeComponent } from './passcode/passcode.component';
+import { CanvasComponent } from './canvas/canvas.component';
 
 declare var baseUrl: any;
 
@@ -30,7 +31,8 @@ declare var baseUrl: any;
     MineComponent,
     HomelistComponent,
     OrderComponent,
-    PasscodeComponent
+    PasscodeComponent,
+    CanvasComponent
 ],
   // 指定
   imports: [
