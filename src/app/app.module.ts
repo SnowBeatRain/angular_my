@@ -10,11 +10,11 @@ import { HomelistComponent } from './homelist/homelist.component';
 import { FormsModule } from '@angular/forms';
 
 //  导入httpModule
-import { HttpModule } from "@angular/http";
+import { HttpModule } from '@angular/http';
 
 import { HttpClientModule } from '@angular/common/http';
 
-import {HttpService} from './http.service'
+import {HttpService} from './http.service';
 
 // 路由导入
 import { AppRouterModule } from './app-router.module';
@@ -29,7 +29,8 @@ declare var baseUrl: any;
     AppComponent,
     HomeComponent,
     MineComponent,
-    HomelistComponent,
+    HomelistComponent
+,
     OrderComponent,
     PasscodeComponent,
     CanvasComponent

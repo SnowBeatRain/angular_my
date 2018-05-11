@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomelistComponent implements OnInit {
 
   constructor() { }
+  num: any = 23;
   yourSelfInfo: {
     Number: '',
     DeliveryUser: '',
@@ -19,11 +20,6 @@ export class HomelistComponent implements OnInit {
   ngOnInit() {
     const info = JSON.parse(localStorage.getItem('yourselfInfo'));
     this.yourSelfInfo = info;
-
-    // var canvas = document.querySelector("#canvas");
-    // var cxt = canvas.getContext("2d");
-    // var canvas: any = document.querySelector("#canvas");
-    // var cxt: CanvasRenderingContext2D = canvas.nativeElement.getContext("2d");
   }
 
 }
