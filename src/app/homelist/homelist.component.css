@@ -5,3 +5,63 @@
 app-canvas {
   width: 100%;
 }
+
+.yourSelf {
+  /* position: fixed;
+  height: 99rem; */
+  width: 100%;
+  background-color: #fff;
+}
+
+.infoMsg {
+  padding: 1rem;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 0.315rem;
+}
+
+.infoMsg .listImg {
+  float: left;
+  width: 7.5rem;
+  height: 5rem;
+  margin-right: 1rem;
+}
+
+.listImg img {
+  width: 100%;
+  height: 100%;
+}
+
+.infoMsg .listInfo p {
+  color: #666;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+}
+
+.infoMsg .listInfo p:nth-child(1) {
+  color: #333;
+}
+
+.lineHeight {
+  background-color: #f0f2f5;
+  height: 1rem;
+  width: 100%;
+}
+
+.mapBox {
+  padding: 1rem;
+}
+
+h3 {
+  font-size: 1rem;
+  color: #333;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
+
+.peopleInfo p {
+  font-size: 0.9rem;
+  color: #666;
+  letter-spacing: 0.1rem;
+  line-height: 1.5rem;
+}
