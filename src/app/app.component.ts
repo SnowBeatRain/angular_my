@@ -14,7 +14,8 @@ import { Title } from '@angular/platform-browser';
 export class AppComponent implements OnInit {
   title = 'app';
   isNav = true;
-  reg = /^home\b|order\b|passcode\b|mine\b$/;
+  // 正则匹配 任意字符（^$ 匹配空）或者匹配底部导航   \/正斜杠
+  reg = /(^\/$)|(^|\/home\b|\/order\b|\/passcode\b|\/mine\b)$/;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -42,8 +43,8 @@ export class AppComponent implements OnInit {
     this.router.events
       .subscribe((event) => {
         if (event instanceof NavigationStart) {
-          // console.log(event);
-          if (this.reg.test(event.url.substr(1))) {
+          // console.log(event.url.substr(1));
+          if (this.reg.test(event.url)) {
             this.isNav = true;
           } else {
             this.isNav = false;

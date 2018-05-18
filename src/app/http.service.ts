@@ -6,7 +6,7 @@ import 'rxjs/Rx';
 import { catchError, map, tap } from 'rxjs/operators';
 
 // 设置请求头
-const tokenString = 'B8975FBE5BC16955A87B9D0E332E829457C9F5867F3F99A13999BD4CEF683BED2F3B28110FE6FD5FEF035F06FAB5A95350BC9FFEE5B222F2F9F0751345D806D5';
+const tokenString = 'ED657D53CAC62E76BCF95F3661AB66955CB2241309DA3FB9E26FF61E09841D55FF3A541E25D4E10192C705F3A7D836650F3685960A7EF897CC36F3CD3DA956B3';
 const httpOptions = {
   headers: new HttpHeaders({ 'Authorization': tokenString })
 };
@@ -47,5 +47,12 @@ export class HttpService {
         catchError(this.handleError)
       );
 
+  }
+  passcodeUserInfo() {
+    return this.http.get(this.heroesUrl + '/api/User/Info', httpOptions)
+      .pipe(
+        tap(res => { }),
+        catchError(this.handleError)
+      );
   }
 }

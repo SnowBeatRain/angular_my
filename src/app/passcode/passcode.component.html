@@ -1,3 +1,24 @@
-<p>
-  passcode works!
-</p>
+<div class="passCode">
+  <div class="codeInfo">
+    <div class="topImg">
+      <img [src]="userInfo.Image" alt="">
+      <p>{{userInfo.NickName}}</p>
+    </div>
+    <div class="codeImg">
+      <svg id="barcode"></svg>
+      <div class="numFalseCode">{{numArr.join("").substring(0, 4)}}***{{numArr.join("").substring(4, 8) }}</div>
+      <p (click)="isShuaIcon()" style="color:#3470cb;">1分钟自动刷新条码<i  [className]="!isShua?'fa fa-refresh':'fa fa-refresh fa-spin fa-fw'" aria-hidden="true" ></i></p>
+    </div>
+  </div>
+  <!-- <div class="codeList">
+    <div  class="infoMsg animated fadeInDown" *ngFor=="let l of orderList,let i= index">
+      <div class="listImg">
+        <CompanyImg :name="l.company"></CompanyImg>
+      </div>
+      <div class="listInfo">
+        <p>单号：</p>
+        <p>{{l.orderNum}}</p>
+      </div>
+    </div>
+  </div> -->
+</div>
